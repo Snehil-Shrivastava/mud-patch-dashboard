@@ -1,3 +1,4 @@
+import PostUseChartsSection from "@/Sections/post-use-collections-charts";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,6 +32,7 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <PostUseChartsSection />
     </div>
   );
 };
