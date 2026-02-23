@@ -21,9 +21,6 @@ const tabs = [
   },
 ];
 
-// The sidebar's own background color
-const SIDEBAR_BG = "#ffffff"; // adjust to match your sidebar bg
-
 function hexToFilter(hex: string): string {
   const filters: Record<string, string> = {
     "#3F5E3E":
@@ -39,7 +36,6 @@ const SidebarTabs = () => {
 
   return (
     <>
-      {/* Inject the concave corner styles */}
       <style>{`
         .active-tab {
           position: relative;
@@ -48,30 +44,6 @@ const SidebarTabs = () => {
           margin-right: -2.5rem; /* match your sidebar px-10 padding */
           padding-right: 2.5rem;
           border-radius: 24px 0 0 24px;
-        }
-
-        .active-tab::before,
-        .active-tab::after {
-          content: "";
-          position: absolute;
-          right: 0;
-          width: 24px;
-          height: 24px;
-          /* box-shadow creates a filled quarter-circle in the sidebar bg color,
-             giving the concave corner illusion */
-          background: transparent;
-        }
-
-        .active-tab::before {
-          top: -24px;
-          // box-shadow: 12px 12px 0 12px ${SIDEBAR_BG};
-          border-bottom-right-radius: 50%;
-        }
-
-        .active-tab::after {
-          bottom: -24px;
-          // box-shadow: 12px -12px 0 12px ${SIDEBAR_BG};
-          border-top-right-radius: 50%;
         }
       `}</style>
 
@@ -88,7 +60,7 @@ const SidebarTabs = () => {
                 style={{
                   backgroundColor: isActive ? "#fafafa" : tab.color,
                   color: isActive ? tab.color : "white",
-                  // width: isActive ? "300px" : "auto",
+                  width: isActive ? "300px" : "auto",
                 }}
               >
                 <div className="flex gap-7.5 items-center">

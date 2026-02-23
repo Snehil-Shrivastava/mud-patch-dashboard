@@ -3,13 +3,10 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupAction,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarInset,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
@@ -18,14 +15,13 @@ import Image from "next/image";
 
 import mudpatchLogo from "@/public/mudpatch_logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faUser } from "@fortawesome/free-solid-svg-icons";
-import SidebarTabs from "./sidebar-tabs";
-import { ChevronDown, Home, Plus } from "lucide-react";
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "./ui/collapsible";
+  faGear,
+  faUser,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+import SidebarTabs from "./sidebar-tabs";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,24 +29,11 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-const Projects = [
-  {
-    name: "Project 1",
-    url: "#",
-  },
-  {
-    name: "Project 2",
-    url: "#",
-  },
-  {
-    name: "Project 3",
-    url: "#",
-  },
-];
+import { signOut } from "@/auth";
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset">
+    <Sidebar variant="inset" className="select-none">
       <SidebarInset className="py-8.25">
         <SidebarHeader>
           <SidebarMenu>
@@ -68,15 +51,41 @@ export function AppSidebar() {
           <SidebarGroup />
         </SidebarContent>
         <SidebarFooter className="px-10 text-[#7A5C51]">
-          <SidebarMenu className=" border-t border-t-[#7A5C51]/50 pt-5">
+          <SidebarMenu className="border-t border-t-[#7A5C51]/50 pt-5">
             <SidebarMenuItem className="flex flex-col gap-3">
-              <SidebarMenuButton className="gap-5">
-                <FontAwesomeIcon icon={faUser} style={{ color: "#7A5C51" }} />
-                <span>Profile</span>
-              </SidebarMenuButton>
-              {/* <SidebarMenuButton className="gap-5"> */}
-              {/* <FontAwesomeIcon icon={faGear} style={{ color: "#7A5C51" }} />
-                <span>Settings</span> */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <SidebarMenuButton className="flex gap-5 outline-none border-none">
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      style={{ color: "#7A5C51" }}
+                    />
+                    <span>Profile</span>
+                  </SidebarMenuButton>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
+                  <DropdownMenuItem>
+                    <span>View Profile</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <form
+                      action={async () => {
+                        "use server";
+                        await signOut({ redirectTo: "/sign-in" });
+                      }}
+                    >
+                      <button
+                        type="submit"
+                        className="flex items-center gap-2 w-full text-red-500"
+                      >
+                        <FontAwesomeIcon icon={faRightFromBracket} />
+                        <span>Sign out</span>
+                      </button>
+                    </form>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <SidebarMenuButton className="flex gap-5 outline-none border-none">
@@ -89,11 +98,10 @@ export function AppSidebar() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
                   <DropdownMenuItem>
-                    <span>Dashboad Settings</span>
+                    <span>Dashboard Settings</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              {/* </SidebarMenuButton> */}
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarFooter>
