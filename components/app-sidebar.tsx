@@ -26,6 +26,12 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const Projects = [
   {
@@ -68,10 +74,26 @@ export function AppSidebar() {
                 <FontAwesomeIcon icon={faUser} style={{ color: "#7A5C51" }} />
                 <span>Profile</span>
               </SidebarMenuButton>
-              <SidebarMenuButton className="gap-5">
-                <FontAwesomeIcon icon={faGear} style={{ color: "#7A5C51" }} />
-                <span>Settings</span>
-              </SidebarMenuButton>
+              {/* <SidebarMenuButton className="gap-5"> */}
+              {/* <FontAwesomeIcon icon={faGear} style={{ color: "#7A5C51" }} />
+                <span>Settings</span> */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <SidebarMenuButton className="flex gap-5 outline-none border-none">
+                    <FontAwesomeIcon
+                      icon={faGear}
+                      style={{ color: "#7A5C51" }}
+                    />
+                    <span>Settings</span>
+                  </SidebarMenuButton>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
+                  <DropdownMenuItem>
+                    <span>Dashboad Settings</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              {/* </SidebarMenuButton> */}
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarFooter>
