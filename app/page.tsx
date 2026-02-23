@@ -1,9 +1,5 @@
+import { redirect } from "next/navigation";
+
 export default function Home() {
-  return (
-    <div>
-      <div>
-        <h1>Post-use garment collections Page</h1>
-      </div>
-    </div>
-  );
+  return redirect("/post-use-collections");
 }

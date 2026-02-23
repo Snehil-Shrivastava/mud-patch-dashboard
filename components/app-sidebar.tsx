@@ -3,10 +3,13 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarHeader,
   SidebarInset,
   SidebarMenu,
+  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
@@ -17,6 +20,27 @@ import mudpatchLogo from "@/public/mudpatch_logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faUser } from "@fortawesome/free-solid-svg-icons";
 import SidebarTabs from "./sidebar-tabs";
+import { ChevronDown, Home, Plus } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "./ui/collapsible";
+
+const Projects = [
+  {
+    name: "Project 1",
+    url: "#",
+  },
+  {
+    name: "Project 2",
+    url: "#",
+  },
+  {
+    name: "Project 3",
+    url: "#",
+  },
+];
 
 export function AppSidebar() {
   return (
@@ -29,7 +53,7 @@ export function AppSidebar() {
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarHeader>
-        <SidebarContent className="px-10 mt-20">
+        <SidebarContent className="px-10 mt-20 overflow-x-hidden">
           <SidebarGroup className="p-0">
             <SidebarGroupContent>
               <SidebarTabs />
