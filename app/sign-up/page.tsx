@@ -50,6 +50,7 @@ export default function SignUpPage() {
     if (result?.error) {
       setError("Something went wrong. Please try again.");
     } else {
+      router.refresh();
       router.push("/post-use-collections");
     }
   };
