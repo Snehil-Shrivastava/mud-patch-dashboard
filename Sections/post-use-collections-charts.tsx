@@ -1,32 +1,65 @@
-import { CollectionWeightChart } from "@/components/collection-weight-chart";
+import { auth } from "@/auth";
+import { IntegrationNumberChart } from "@/components/integration-number-chart";
 import { CollectionRateChart } from "@/components/collections-rate-chart";
 import { GarmentSoldChart } from "@/components/garment-sold-chart";
-import React from "react";
+import { PostUseRadialChart } from "@/components/post-use-radial-chart";
+import { getDashboardData } from "@/lib/data";
+import { MonthFilter } from "@/components/month-filter";
+import { CollectionVolumeChart } from "@/components/collection-volume-chart";
 
-const PostUseChartsSection = () => {
+const PostUseChartsSection = async ({
+  month = "current",
+}: {
+  month?: string;
+}) => {
+  const session = await auth();
+
+  const firstName = session?.user?.firstName || "Unknown";
+  const lastName = session?.user?.lastName || "User";
+  const memberId = session?.user?.id ?? "—";
+
+  const dashboardData = await getDashboardData(month);
+
+  console.log(session);
+
   return (
     <div className="mt-35">
       <div className="flex bg-[#3F5E3E] text-white items-center p-4 rounded-xl gap-10 justify-between">
         <div className="flex gap-8 items-center">
           <div className="w-15 h-15 bg-white rounded-md" />
           <div>
-            <h2 className="text-2xl font-bold">Hello, Little Green</h2>
-            <span className="font-light text-lg">Welcome Back</span>
+            <h2 className="text-3xl font-gilroy-bold">
+              {firstName} {lastName}
+            </h2>
+            <div className="text-lg flex gap-2 items-center">
+              <span className="font-gilroy-light">Member ID:</span>
+              <span className="font-gilroy-bold">{memberId}</span>
+            </div>
           </div>
         </div>
         <div className="flex gap-10 items-center">
           <div>Report View</div>
-          <div>Current Month</div>
+          <div className="bg-white rounded-md font-gilroy-bold text-[#7A5C51]">
+            <MonthFilter />
+          </div>
         </div>
       </div>
-      <div className="mt-20">
+      <div className="mt-20 flex flex-col gap-10">
         <div className="flex gap-5">
-          <GarmentSoldChart />
-          <CollectionRateChart />
-          <CollectionWeightChart />
+          {dashboardData.metrics.map((metric) => (
+            <PostUseRadialChart
+              key={metric.id}
+              title={metric.title}
+              description={metric.description}
+              value={metric.value}
+              max={metric.max}
+              format={metric.format}
+            />
+          ))}
         </div>
-        <div></div>
-        <div></div>
+        <div>
+          <CollectionVolumeChart />
+        </div>
       </div>
     </div>
   );

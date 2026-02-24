@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+
+import localFont from "next/font/local";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +14,42 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const gilroyExtraLight = localFont({
+  src: "../public/gilroy/Gilroy-Thin.ttf",
+  variable: "--font-gilroy-extralight",
+  display: "swap",
+});
+
+const gilroyLight = localFont({
+  src: "../public/gilroy/Gilroy-Light.ttf",
+  variable: "--font-gilroy-light",
+  display: "swap",
+});
+
+const gilroyRegular = localFont({
+  src: "../public/gilroy/Gilroy-Regular.ttf",
+  variable: "--font-gilroy-regular",
+  display: "swap",
+});
+
+const gilroyMedium = localFont({
+  src: "../public/gilroy/Gilroy-Medium.ttf",
+  variable: "--font-gilroy-medium",
+  display: "swap",
+});
+
+const gilroySemibold = localFont({
+  src: "../public/gilroy/Gilroy-SemiBold.ttf",
+  variable: "--font-gilroy-semibold",
+  display: "swap",
+});
+
+const gilroyBold = localFont({
+  src: "../public/gilroy/Gilroy-Bold.ttf",
+  variable: "--font-gilroy-bold",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,24 +63,23 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth();
+
+  const fontClasses = [
+    gilroyRegular.variable,
+    gilroyLight.variable,
+    gilroyExtraLight.variable,
+    gilroyMedium.variable,
+    gilroySemibold.variable,
+    gilroyBold.variable,
+  ].join(" ");
+
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fontClasses} antialiased font-gilroy-regular`}
       >
         <SessionProvider session={session}>
-          {/* <TooltipProvider>
-            <SidebarProvider
-              style={
-                {
-                  "--sidebar-width": "19.5rem",
-                } as React.CSSProperties
-              }
-            > */}
-          {/* <AppSidebar /> */}
           <main className="w-full">{children}</main>
-          {/* </SidebarProvider>
-          </TooltipProvider> */}
         </SessionProvider>
       </body>
     </html>

@@ -55,7 +55,7 @@ export function AppSidebar() {
             <SidebarMenuItem className="flex flex-col gap-3">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <SidebarMenuButton className="flex gap-5 outline-none border-none">
+                  <SidebarMenuButton className="flex gap-5 outline-none border-none font-gilroy-medium">
                     <FontAwesomeIcon
                       icon={faUser}
                       style={{ color: "#7A5C51" }}
@@ -63,7 +63,7 @@ export function AppSidebar() {
                     <span>Profile</span>
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
+                <DropdownMenuContent className="w-[--radix-popper-anchor-width] font-gilroy-medium">
                   <DropdownMenuItem>
                     <span>View Profile</span>
                   </DropdownMenuItem>
@@ -88,7 +88,7 @@ export function AppSidebar() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <SidebarMenuButton className="flex gap-5 outline-none border-none">
+                  <SidebarMenuButton className="flex gap-5 outline-none border-none font-gilroy-medium">
                     <FontAwesomeIcon
                       icon={faGear}
                       style={{ color: "#7A5C51" }}
@@ -96,7 +96,7 @@ export function AppSidebar() {
                     <span>Settings</span>
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
+                <DropdownMenuContent className="w-[--radix-popper-anchor-width] font-gilroy-medium">
                   <DropdownMenuItem>
                     <span>Dashboard Settings</span>
                   </DropdownMenuItem>

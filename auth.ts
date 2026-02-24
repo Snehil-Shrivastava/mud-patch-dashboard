@@ -75,7 +75,7 @@ import argon2 from "argon2";
 // Dummy user store — replace with DB queries later
 const DUMMY_USERS = [
   {
-    id: "1",
+    id: "PATCH1103",
     email: "demo@mudpatch.com",
     // In a real app, you will NEVER store plain-text passwords.
     // This is a placeholder for an argon2 hash of "password123".
@@ -90,6 +90,7 @@ const DUMMY_USERS = [
 declare module "next-auth" {
   interface Session {
     user: {
+      id?: string;
       firstName?: string;
       lastName?: string;
     } & DefaultSession["user"];
@@ -155,12 +156,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
+        token.id = user.id;
         token.firstName = user.firstName;
         token.lastName = user.lastName;
       }
       return token;
     },
     async session({ session, token }) {
+      session.user.id = token.id as string;
       session.user.firstName = token.firstName as string;
       session.user.lastName = token.lastName as string;
       return session;

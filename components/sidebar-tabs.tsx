@@ -75,7 +75,11 @@ const SidebarTabs = () => {
                         : "brightness(0) invert(1)",
                     }}
                   />
-                  <span className={isActive ? "font-semibold" : "font-normal"}>
+                  <span
+                    className={
+                      isActive ? "font-gilroy-bold" : "font-gilroy-regular"
+                    }
+                  >
                     {tab.label}
                   </span>
                 </div>

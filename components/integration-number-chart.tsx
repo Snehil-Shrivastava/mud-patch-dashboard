@@ -19,8 +19,8 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export const description = "A radial chart with text";
 
-const VALUE = 35;
-const MAX = 52;
+const VALUE = 3;
+const MAX = 5;
 
 const chartData = [{ browser: "safari", visitors: VALUE, fill: "#3F5E3E" }];
 
@@ -34,15 +34,17 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function CollectionWeightChart() {
+export function IntegrationNumberChart() {
   const endAngle = 90 + (VALUE / MAX) * 360;
   return (
     <Card className="grid grid-cols-2 w-80 shadow-none border-none px-5 gap-4">
       <CardHeader className="pb-0 px-0 gap-0 inline-block text-[#7A5C51]">
-        <CardTitle className="font-bold text-lg leading-5">
-          Collection Weight
+        <CardTitle className="font-gilroy-bold text-lg leading-6">
+          Number of integrations
         </CardTitle>
-        <CardDescription className="text-sm">Band Channels</CardDescription>
+        <CardDescription className="text-sm">
+          Active Brand channels
+        </CardDescription>
       </CardHeader>
       <CardContent className="pb-0 px-0 w-30">
         <ChartContainer
@@ -78,18 +80,10 @@ export function CollectionWeightChart() {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="text-[28px] font-bold"
+                          className="text-[28px] font-gilroy-bold"
                           fill="#7A5C51"
                         >
                           {chartData[0].visitors}
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          fill="#7A5C51"
-                          className="text-sm"
-                        >
-                          kgs
                         </tspan>
                       </text>
                     );
