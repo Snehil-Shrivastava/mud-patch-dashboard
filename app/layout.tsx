@@ -34,18 +34,18 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SessionProvider session={session}>
-          <TooltipProvider>
+          {/* <TooltipProvider>
             <SidebarProvider
               style={
                 {
                   "--sidebar-width": "19.5rem",
                 } as React.CSSProperties
               }
-            >
-              <AppSidebar />
-              <main className="w-full">{children}</main>
-            </SidebarProvider>
-          </TooltipProvider>
+            > */}
+          {/* <AppSidebar /> */}
+          <main className="w-full">{children}</main>
+          {/* </SidebarProvider>
+          </TooltipProvider> */}
         </SessionProvider>
       </body>
     </html>
