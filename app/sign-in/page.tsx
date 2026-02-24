@@ -19,19 +19,20 @@ export default function SignInPage() {
     setLoading(true);
     setError("");
 
-    const result = await signIn("credentials", {
+    await signIn("credentials", {
       email,
       password,
-      redirect: false,
+      redirect: true,
+      redirectTo: "/post-use-collections",
     });
 
     setLoading(false);
 
-    if (result?.error) {
-      setError("Invalid email or password.");
-    } else {
-      router.push("/post-use-collections");
-    }
+    // if (result?.error) {
+    //   setError("Invalid email or password.");
+    // } else {
+    //   router.push("/");
+    // }
   };
 
   const handleGoogleSignIn = () => {
