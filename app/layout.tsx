@@ -76,7 +76,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fontClasses} antialiased font-gilroy-regular`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fontClasses} antialiased font-gilroy-regular flex min-h-screen overflow-y-auto`}
       >
         <SessionProvider session={session}>
           <main className="w-full">{children}</main>

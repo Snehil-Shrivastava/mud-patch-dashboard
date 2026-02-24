@@ -1,11 +1,9 @@
 import { auth } from "@/auth";
-import { IntegrationNumberChart } from "@/components/integration-number-chart";
-import { CollectionRateChart } from "@/components/collections-rate-chart";
-import { GarmentSoldChart } from "@/components/garment-sold-chart";
 import { PostUseRadialChart } from "@/components/post-use-radial-chart";
-import { getDashboardData } from "@/lib/data";
+import { getDashboardData, getYearlyVolumeData } from "@/lib/data";
 import { MonthFilter } from "@/components/month-filter";
 import { CollectionVolumeChart } from "@/components/collection-volume-chart";
+import CollectionUnitsChart from "@/components/collection-units-chart";
 
 const PostUseChartsSection = async ({
   month = "current",
@@ -20,10 +18,10 @@ const PostUseChartsSection = async ({
 
   const dashboardData = await getDashboardData(month);
 
-  console.log(session);
+  const volumeData = await getYearlyVolumeData("this-year");
 
   return (
-    <div className="mt-35">
+    <div className="flex flex-col gap-20 h-[75vh]">
       <div className="flex bg-[#3F5E3E] text-white items-center p-4 rounded-xl gap-10 justify-between">
         <div className="flex gap-8 items-center">
           <div className="w-15 h-15 bg-white rounded-md" />
@@ -44,7 +42,7 @@ const PostUseChartsSection = async ({
           </div>
         </div>
       </div>
-      <div className="mt-20 flex flex-col gap-10">
+      <div className="flex flex-col gap-10">
         <div className="flex gap-5">
           {dashboardData.metrics.map((metric) => (
             <PostUseRadialChart
@@ -57,8 +55,9 @@ const PostUseChartsSection = async ({
             />
           ))}
         </div>
-        <div>
-          <CollectionVolumeChart />
+        <div className="flex justify-between">
+          <CollectionUnitsChart />
+          <CollectionVolumeChart data={volumeData.data} />
         </div>
       </div>
     </div>
