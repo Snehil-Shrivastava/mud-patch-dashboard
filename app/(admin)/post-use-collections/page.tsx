@@ -1,3 +1,4 @@
+import CollectionVolumeProductChart from "@/components/collection-volume-product";
 import CollectionVolumeSegmentChart from "@/components/collection-volume-segment";
 import PostUseChartsSection from "@/Sections/post-use-collections-charts";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
@@ -49,8 +50,9 @@ const Page = async ({
         </div>
       </div>
       <PostUseChartsSection month={month} />
-      <div className="h-[85vh]">
+      <div className="h-[85vh] flex justify-between items-start">
         <CollectionVolumeSegmentChart />
+        <CollectionVolumeProductChart />
       </div>
     </div>
   );

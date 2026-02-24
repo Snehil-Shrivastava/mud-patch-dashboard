@@ -20,7 +20,13 @@ const CollectionVolumeRow = ({
       <div className="flex gap-10 items-center">
         {/* Category Icon */}
         <div className="bg-[#3F5E3E] w-12 h-12 rounded-full flex items-center justify-center">
-          <Image src={iconSrc} alt={`${label} icon`} width={24} height={24} />
+          <Image
+            src={iconSrc}
+            alt={`${label} icon`}
+            width={24}
+            height={24}
+            className={`${label === "Dresses" ? "scale-50" : ""}`}
+          />
         </div>
 
         {/* Category Label */}

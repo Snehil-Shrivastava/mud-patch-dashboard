@@ -289,8 +289,7 @@ export interface CategoryVolumeData {
   iconSrc: string;
 }
 
-// Data perfectly matching your screenshot
-export const mockCategoryVolumeData: CategoryVolumeData[] = [
+export const mockCategoryVolumeSegmentData: CategoryVolumeData[] = [
   // Assuming rose.svg is your placeholder for the "Baby" category
   { id: "baby", label: "Baby", percentage: 29, kgs: 420, iconSrc: "/rose.svg" },
   { id: "teen", label: "Teen", percentage: 21, kgs: 300, iconSrc: "/teen.svg" },
@@ -328,5 +327,58 @@ export const mockCategoryVolumeData: CategoryVolumeData[] = [
     percentage: 3,
     kgs: 50,
     iconSrc: "/pre-teen.svg",
+  },
+];
+
+export const mockCategoryVolumeProductData: CategoryVolumeData[] = [
+  // Assuming rose.svg is your placeholder for the "Baby" category
+  {
+    id: "bodysuit",
+    label: "Bodysuit",
+    percentage: 29,
+    kgs: 420,
+    iconSrc: "/bodysuit.svg",
+  },
+  {
+    id: "tshirts",
+    label: "T-shirts",
+    percentage: 21,
+    kgs: 300,
+    iconSrc: "/tshirts.svg",
+  },
+  {
+    id: "shirts",
+    label: "Shirts",
+    percentage: 17,
+    kgs: 240,
+    iconSrc: "/shirts.svg",
+  },
+  {
+    id: "dresses",
+    label: "Dresses",
+    percentage: 12,
+    kgs: 180,
+    iconSrc: "/dresses.svg",
+  },
+  {
+    id: "dungaress",
+    label: "Dungaress",
+    percentage: 9,
+    kgs: 130,
+    iconSrc: "/dungaress.svg",
+  },
+  {
+    id: "pjs",
+    label: "PJs",
+    percentage: 6,
+    kgs: 90,
+    iconSrc: "/pjs.svg",
+  },
+  {
+    id: "blankets",
+    label: "Blankets",
+    percentage: 3,
+    kgs: 50,
+    iconSrc: "/blankets.svg",
   },
 ];

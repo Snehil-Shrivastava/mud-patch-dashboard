@@ -1,8 +1,8 @@
 // components/collection-units-chart.tsx
 import CollectionVolumeRow from "./collection-volume-row";
-import { mockCategoryVolumeSegmentData } from "@/lib/data"; // Import the data
+import { mockCategoryVolumeProductData } from "@/lib/data"; // Import the data
 
-const CollectionVolumeSegmentChart = () => {
+const CollectionVolumeProductChart = () => {
   return (
     <div className="bg-white text-brand w-[48%] rounded-xl p-6">
       <div className="flex flex-col gap-1">
@@ -16,7 +16,7 @@ const CollectionVolumeSegmentChart = () => {
       <div className="flex flex-col items-center mt-8">
         {/* Dynamic Progress Bars List */}
         <div className="w-full mt-8 flex flex-col gap-10 px-4 h-145 overflow-y-auto">
-          {mockCategoryVolumeSegmentData.map((category) => (
+          {mockCategoryVolumeProductData.map((category) => (
             <CollectionVolumeRow
               key={category.id}
               label={category.label}
@@ -31,4 +31,4 @@ const CollectionVolumeSegmentChart = () => {
   );
 };
 
-export default CollectionVolumeSegmentChart;
+export default CollectionVolumeProductChart;
