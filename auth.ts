@@ -80,7 +80,7 @@ const DUMMY_USERS = [
     // In a real app, you will NEVER store plain-text passwords.
     // This is a placeholder for an argon2 hash of "password123".
     // When you implement registration, you will generate this using `await argon2.hash("password123")`
-    hashedPassword: await argon2.hash("password123"),
+    hashedPassword: await argon2.hash("mudpatch@website"),
     firstName: "Demo",
     lastName: "User",
   },
