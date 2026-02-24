@@ -14,25 +14,24 @@ export default function SignInPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleCredentialsSignIn = async (e: React.FormEvent) => {
+  const handleCredentialsSignIn = async (e: React.SubmitEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    await signIn("credentials", {
+    const result = await signIn("credentials", {
       email,
       password,
-      redirect: true,
-      redirectTo: "/post-use-collections",
+      redirect: false,
     });
 
     setLoading(false);
 
-    // if (result?.error) {
-    //   setError("Invalid email or password.");
-    // } else {
-    //   router.push("/");
-    // }
+    if (result?.error) {
+      setError("Invalid email or password.");
+    } else {
+      router.push("/post-use-collections");
+    }
   };
 
   const handleGoogleSignIn = () => {

@@ -1,18 +1,18 @@
-import { auth as proxy } from "@/auth";
+import { auth } from "@/auth";
 import { NextResponse } from "next/server";
 
-export default proxy((req) => {
+export default auth((req) => {
   const isLoggedIn = !!req.auth;
   const isAuthPage =
     req.nextUrl.pathname.startsWith("/sign-in") ||
     req.nextUrl.pathname.startsWith("/sign-up");
 
   if (!isLoggedIn && !isAuthPage) {
-    return NextResponse.redirect(new URL("/sign-in", req.url));
+    return NextResponse.redirect(new URL("/sign-in", req.nextUrl));
   }
 
   if (isLoggedIn && isAuthPage) {
-    return NextResponse.redirect(new URL("/post-use-collections", req.url));
+    return NextResponse.redirect(new URL("/post-use-collections", req.nextUrl));
   }
 });
 
