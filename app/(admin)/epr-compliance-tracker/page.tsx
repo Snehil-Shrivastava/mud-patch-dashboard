@@ -1,9 +1,12 @@
-import DiversionAssessmentChart from "@/components/garment-diversion-assessment";
+import DiversionAssessment from "@/components/garment-diversion-assessment";
 
 const Page = () => {
   return (
     <div>
-      <DiversionAssessmentChart />
+      <DiversionAssessment
+        title="Garment Diversion Assessment"
+        description="Reusability Vs Non-Reusability: Across all integrations or sources"
+      />
     </div>
   );
 };
