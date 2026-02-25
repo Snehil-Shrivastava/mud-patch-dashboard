@@ -35,14 +35,14 @@ export function AppSidebar() {
   return (
     <Sidebar variant="inset" className="select-none">
       <SidebarInset className="py-8.25">
-        <SidebarHeader>
+        <SidebarHeader className="py-10">
           <SidebarMenu>
             <SidebarMenuItem className="flex justify-center">
               <Image src={mudpatchLogo} alt="Mud Patch Logo" />
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarHeader>
-        <SidebarContent className="px-10 mt-20 overflow-x-hidden">
+        <SidebarContent className="px-10 mt-10 overflow-x-hidden">
           <SidebarGroup className="p-0">
             <SidebarGroupContent>
               <SidebarTabs />
@@ -51,7 +51,7 @@ export function AppSidebar() {
           <SidebarGroup />
         </SidebarContent>
         <SidebarFooter className="px-10 text-[#7A5C51]">
-          <SidebarMenu className="border-t border-t-[#7A5C51]/50 pt-5">
+          <SidebarMenu className="border-t border-t-[#7A5C51]/20 pt-5">
             <SidebarMenuItem className="flex flex-col gap-3">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

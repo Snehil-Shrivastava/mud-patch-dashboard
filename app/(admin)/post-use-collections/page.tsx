@@ -22,7 +22,7 @@ const Page = async ({
   return (
     <>
       <PostUseChartsSection month={month} />
-      <div className="h-[85vh] flex justify-between items-start">
+      <div className="flex justify-between items-start">
         <CollectionVolumeChart
           title="Collection volume by segment"
           description="Units & weight ranked by segment"
