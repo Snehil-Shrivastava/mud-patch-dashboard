@@ -489,3 +489,43 @@ export const mockUsageComparisonData: UsageComparisonData[] = [
   { month: "Nov", greenBrand: 75, peerIndex: 60 },
   { month: "Dec", greenBrand: 60, peerIndex: 50 },
 ];
+
+export const mockReusabilityBySegmentData = [
+  { id: "baby", label: "Baby", reusablePercent: 80, iconSrc: "/rose.svg" },
+  { id: "teen", label: "Teen", reusablePercent: 60, iconSrc: "/teen.svg" },
+  {
+    id: "room",
+    label: "Room Essentials",
+    reusablePercent: 55,
+
+    iconSrc: "/room-essentials.svg",
+  },
+  {
+    id: "women",
+    label: "Women",
+    reusablePercent: 50,
+
+    iconSrc: "/women.svg",
+  },
+  {
+    id: "toddler",
+    label: "Toddler",
+    reusablePercent: 40,
+
+    iconSrc: "/toddler.svg",
+  },
+  {
+    id: "child",
+    label: "Child",
+    reusablePercent: 30,
+
+    iconSrc: "/child.svg",
+  },
+  {
+    id: "pre-teen",
+    label: "Pre-Teen",
+    reusablePercent: 75,
+
+    iconSrc: "/pre-teen.svg",
+  },
+];

@@ -18,7 +18,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
         >
           <AppSidebar />
           <div className="w-full min-h-screen text-[#7A5C51] relative bg-[#f8f8f8] items-center">
-            <div className="flex flex-col gap-20 max-w-[1130px] mx-auto py-10 px-15">
+            <div className="flex flex-col gap-20 max-w-282.5 mx-auto py-10 px-15">
               <div className="sticky top-0 z-50 bg-[#f8f8f8] py-4 w-full">
                 <div className="flex justify-between items-end">
                   <h1 className="text-[32px] font-gilroy-bold">
