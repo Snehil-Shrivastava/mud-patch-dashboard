@@ -12,7 +12,7 @@ import {
 const Page = () => {
   return (
     <>
-      <div className="">
+      <div className="w-full">
         <div className="grid grid-cols-2 gap-10">
           {mockUsageMetricsData.map((data, index) => (
             <div className="bg-white rounded-xl p-6" key={index}>
@@ -41,10 +41,10 @@ const Page = () => {
           />
         </div>
       </div>
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-start w-full">
         <UsageOverTImeChart />
       </div>
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-start w-full">
         <CollectionVolumeChart
           title="Usage by segment"
           description="Duration of use (days): Ranked by segment"

@@ -21,7 +21,7 @@ const PostUseChartsSection = async ({
   const volumeData = await getYearlyVolumeData("this-year");
 
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-20 w-full">
       <div className="flex bg-[#3F5E3E] text-white items-center p-4 rounded-xl gap-10 justify-between">
         <div className="flex gap-8 items-center">
           <div className="w-15 h-15 bg-white rounded-md" />
