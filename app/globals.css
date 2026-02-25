@@ -5,8 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-tracker-background: var(--tracker-background)
-    --color-background: var(--background);
+  --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -97,8 +96,6 @@
 
   --color-brand: oklch(0.5025 0.0433 41.05);
   --color-bannerGreen: oklch(0.4483 0.063 143.71);
-
-  --tracker-background: oklch(40.715% 0.03607 244.282);
 }
 
 .dark {
