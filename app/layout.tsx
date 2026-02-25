@@ -77,6 +77,7 @@ export default async function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fontClasses} antialiased font-gilroy-regular flex min-h-screen overflow-y-auto`}
+        suppressHydrationWarning={true}
       >
         <SessionProvider session={session}>
           <main className="w-full">{children}</main>

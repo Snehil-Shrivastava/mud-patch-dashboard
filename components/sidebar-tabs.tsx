@@ -5,21 +5,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import postUseCollection from "@/public/post-use-collection.svg";
 import lifeCycleMetrics from "@/public/life-cycle-metrics.svg";
+import { tabs } from "@/lib/data";
 
-const tabs = [
-  {
-    label: "Post-use garment collections",
-    href: "/post-use-collections",
-    icon: postUseCollection,
-    color: "#3F5E3E",
-  },
-  {
-    label: "Garment life-cycle metrics",
-    href: "/garment-lifecycle-metrics",
-    icon: lifeCycleMetrics,
-    color: "#CF9645",
-  },
-];
+// const tabs = [
+//   {
+//     label: "Post-use garment collections",
+//     href: "/post-use-collections",
+//     icon: postUseCollection,
+//     color: "#3F5E3E",
+//   },
+//   {
+//     label: "Garment life-cycle metrics",
+//     href: "/garment-lifecycle-metrics",
+//     icon: lifeCycleMetrics,
+//     color: "#CF9645",
+//   },
+// ];
 
 function hexToFilter(hex: string): string {
   const filters: Record<string, string> = {

@@ -1,3 +1,24 @@
+export const tabs = [
+  {
+    label: "Post-use garment collections",
+    href: "/post-use-collections",
+    icon: "/post-use-collection.svg",
+    color: "#3F5E3E",
+  },
+  {
+    label: "Garment life-cycle metrics",
+    href: "/garment-lifecycle-metrics",
+    icon: "/life-cycle-metrics.svg",
+    color: "#CF9645",
+  },
+  {
+    label: "EPR compliance tracker",
+    href: "/epr-compliance-tracker",
+    icon: "/epr-compliance-tracker.svg",
+    color: "#2C4152",
+  },
+];
+
 export type ChartFormat = "units" | "percentage" | "number";
 
 export interface MetricData {
@@ -161,14 +182,18 @@ export interface VolumeData {
 
 export interface YearlyVolumeData {
   yearId: string;
-  label: string;
+  label1: string;
+  label2: string;
+  year: string;
   data: VolumeData[];
 }
 
 export const mockYearlyVolumeData: YearlyVolumeData[] = [
   {
     yearId: "this-year",
-    label: "2026 (This Year)",
+    year: "2026 (This Year)",
+    label1: "Green brand",
+    label2: "Peer Index",
     data: [
       { month: "January", greenBrand: 220, peerIndex: 150 },
       { month: "February", greenBrand: 340, peerIndex: 220 },
@@ -186,7 +211,9 @@ export const mockYearlyVolumeData: YearlyVolumeData[] = [
   },
   {
     yearId: "last-year",
-    label: "2025 (Last Year)",
+    year: "2025 (Last Year)",
+    label1: "Green brand",
+    label2: "Peer Index",
     data: [
       { month: "January", greenBrand: 186, peerIndex: 80 },
       { month: "February", greenBrand: 305, peerIndex: 200 },
@@ -204,7 +231,9 @@ export const mockYearlyVolumeData: YearlyVolumeData[] = [
   },
   {
     yearId: "two-years-ago",
-    label: "2024 (Two Years Ago)",
+    year: "2024 (Two Years Ago)",
+    label1: "Green brand",
+    label2: "Peer Index",
     data: [
       { month: "January", greenBrand: 120, peerIndex: 100 },
       { month: "February", greenBrand: 150, peerIndex: 130 },
@@ -222,7 +251,9 @@ export const mockYearlyVolumeData: YearlyVolumeData[] = [
   },
   {
     yearId: "last-3-years",
-    label: "Combined (3 Years)",
+    year: "Combined (3 Years)",
+    label1: "Green brand",
+    label2: "Peer Index",
     // Sum of the 3 years for each month
     data: [
       { month: "January", greenBrand: 526, peerIndex: 330 },
@@ -381,4 +412,80 @@ export const mockCategoryVolumeProductData: CategoryVolumeData[] = [
     kgs: 50,
     iconSrc: "/blankets.svg",
   },
+];
+
+// Define the interface for the Usage Cards
+export interface UsageMetricData {
+  id: string;
+  title: string;
+  description: string;
+  value: number;
+  max: number;
+  unit: string;
+  iconSrc: string; // The path to the SVG icon in your public folder
+
+  // Optional fields specific to the YOY comparison card
+  trend?: "up" | "down";
+  footerLabel?: string; // e.g., "Product Longevity:"
+  footerStatus?: string; // e.g., "Increase"
+}
+
+// Dummy data matching the screenshot
+export const mockUsageMetricsData: UsageMetricData[] = [
+  {
+    id: "avg-usage-period",
+    title: "Avg usage period",
+    description: "Aggregated within brand's product portfolio",
+    value: 56,
+    max: 56,
+    unit: "days",
+    iconSrc: "/avg-usage-period.svg", // Replace with your actual SVG filename
+  },
+  {
+    id: "yoy-usage-comparison",
+    title: "YOY usage comparison",
+    description: "Change in product usage (days)",
+    value: 3,
+    max: 3,
+    unit: "days",
+    iconSrc: "/usage-comparison.svg", // Replace with your actual SVG filename
+    trend: "up", // This will tell your component to render the green ↑ arrow
+    footerLabel: "Product Longevity:",
+    footerStatus: "Increase", // This will be styled in green text
+  },
+  {
+    id: "usage-comparison-against-peers",
+    title: "Usage comparison against peers",
+    description: "Usage relative to peer group (days)",
+    value: 6,
+    max: 6,
+    unit: "days",
+    iconSrc: "/usage-coparison-against-peers.svg", // Replace with your actual SVG filename
+    trend: "down", // This will tell your component to render the green ↑ arrow
+    footerLabel: "Usage performance:",
+    footerStatus: "Lower than Peers", // This will be styled in green text
+  },
+];
+
+// Define the interface for the Usage Comparison Chart
+export interface UsageComparisonData {
+  month: string;
+  greenBrand: number;
+  peerIndex: number;
+}
+
+// Dummy data structured to mimic the exact curves in the screenshot
+export const mockUsageComparisonData: UsageComparisonData[] = [
+  { month: "Jan", greenBrand: 25, peerIndex: 15 },
+  { month: "Feb", greenBrand: 40, peerIndex: 28 },
+  { month: "Mar", greenBrand: 60, peerIndex: 45 },
+  { month: "Apr", greenBrand: 40, peerIndex: 15 }, // Noticeable dip
+  { month: "May", greenBrand: 45, peerIndex: 40 },
+  { month: "Jun", greenBrand: 55, peerIndex: 48 },
+  { month: "Jul", greenBrand: 56, peerIndex: 35 },
+  { month: "Aug", greenBrand: 52, peerIndex: 25 }, // Another dip
+  { month: "Sep", greenBrand: 55, peerIndex: 45 },
+  { month: "Oct", greenBrand: 95, peerIndex: 75 }, // Highest peak
+  { month: "Nov", greenBrand: 75, peerIndex: 60 },
+  { month: "Dec", greenBrand: 60, peerIndex: 50 },
 ];

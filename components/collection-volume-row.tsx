@@ -7,6 +7,7 @@ interface CollectionVolumeRowProps {
   percentage: number;
   kgs: number;
   iconSrc: string;
+  iconColor?: string;
 }
 
 const CollectionVolumeRow = ({
@@ -14,12 +15,15 @@ const CollectionVolumeRow = ({
   percentage,
   kgs,
   iconSrc,
+  iconColor,
 }: CollectionVolumeRowProps) => {
   return (
     <div className="flex justify-between items-center">
       <div className="flex gap-10 items-center">
         {/* Category Icon */}
-        <div className="bg-[#3F5E3E] w-12 h-12 rounded-full flex items-center justify-center">
+        <div
+          className={`w-12 h-12 rounded-full flex items-center justify-center ${iconColor ? iconColor : "bg-[#3F5E3E]"}`}
+        >
           <Image
             src={iconSrc}
             alt={`${label} icon`}

@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import { PostUseRadialChart } from "@/components/post-use-radial-chart";
 import { getDashboardData, getYearlyVolumeData } from "@/lib/data";
 import { MonthFilter } from "@/components/month-filter";
-import { CollectionVolumeChart } from "@/components/collection-volume-chart";
+import { CollectionVolumeComparisonChart } from "@/components/collection-volume-comparison-chart";
 import CollectionUnitsChart from "@/components/collection-units-chart";
 
 const PostUseChartsSection = async ({
@@ -43,7 +43,7 @@ const PostUseChartsSection = async ({
         </div>
       </div>
       <div className="flex flex-col gap-10">
-        <div className="flex gap-5">
+        <div className="flex gap-5 justify-between">
           {dashboardData.metrics.map((metric) => (
             <PostUseRadialChart
               key={metric.id}
@@ -57,7 +57,15 @@ const PostUseChartsSection = async ({
         </div>
         <div className="flex justify-between">
           <CollectionUnitsChart />
-          <CollectionVolumeChart data={volumeData.data} />
+          <CollectionVolumeComparisonChart
+            data={volumeData.data}
+            title="Collection volume comparison"
+            description="Monthly collection volume relative to peer brands"
+            label1="Green brand"
+            label2="Peer Index"
+            color1="#C0E2C1"
+            color2="#9D8982"
+          />
         </div>
       </div>
     </div>
