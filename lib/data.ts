@@ -588,3 +588,68 @@ export const mockReusabilityByProductData: ReusabilityBySegmentData[] = [
     iconSrc: "/blankets.svg",
   },
 ];
+
+export interface EPRComplianceRadialChartData {
+  bigRadialChartData: {
+    label: string;
+    description: string;
+    ps: string;
+    value: number;
+    max: number;
+    unit: string;
+    footerLable: string;
+  };
+  SmallRadialChartDart: {
+    label: string;
+    description: string;
+    value: number;
+  }[];
+}
+
+export const GarmentDiversionData: EPRComplianceRadialChartData = {
+  bigRadialChartData: {
+    label: "Garment Diversion",
+    description: "Units/Kgs",
+    ps: "*Accross all sources",
+    value: 1410,
+    max: 1410,
+    unit: "units",
+    footerLable: "423 Kgs",
+  },
+  SmallRadialChartDart: [
+    {
+      label: "Reusable quantity",
+      description: "493 units/148 Kgs",
+      value: 35,
+    },
+    {
+      label: "Non-Reusable quantity",
+      description: "917 units/284 Kgs",
+      value: 65,
+    },
+  ],
+};
+
+export const ReusePathwaysData: EPRComplianceRadialChartData = {
+  bigRadialChartData: {
+    label: "Reusable volume",
+    description: "",
+    ps: "",
+    value: 493,
+    max: 493,
+    unit: "units",
+    footerLable: "148 Kgs",
+  },
+  SmallRadialChartDart: [
+    {
+      label: "'As new' to preloved",
+      description: "197 units/60 Kgs",
+      value: 40,
+    },
+    {
+      label: "Mend/repair",
+      description: "296 units/88 Kgs",
+      value: 60,
+    },
+  ],
+};

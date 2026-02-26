@@ -19,13 +19,15 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 interface PostUseRadialChartProps {
   title: string;
-  description: string;
+  description?: string;
   value: number;
   max: number;
   unit: string;
   trend?: "up" | "down";
   footerLabel?: string;
   footerStatus?: string;
+  PS?: string;
+  footerLable?: string;
 }
 
 const chartConfig = {
@@ -44,6 +46,8 @@ export const DiversionAssessmentRadialChartBig = ({
   value,
   max,
   unit,
+  PS,
+  footerLable,
 }: PostUseRadialChartProps) => {
   const endAngle = 90 + (value / max) * 360;
 
@@ -56,11 +60,15 @@ export const DiversionAssessmentRadialChartBig = ({
           <CardTitle className="font-gilroy-bold text-2xl leading-7">
             {title}
           </CardTitle>
-          <CardDescription className="text-sm">{description}</CardDescription>
+          {description && (
+            <CardDescription className="text-sm">{description}</CardDescription>
+          )}
         </div>
-        <div>
-          <span className="text-sm">*Across all sources</span>
-        </div>
+        {PS && (
+          <div>
+            <span className="text-sm">{PS}</span>
+          </div>
+        )}
       </CardHeader>
       <CardContent className="pb-0 px-0 flex-[1.3]">
         <ChartContainer
@@ -123,7 +131,7 @@ export const DiversionAssessmentRadialChartBig = ({
             </PolarRadiusAxis>
           </RadialBarChart>
         </ChartContainer>
-        <p className="text-center py-1.5 text-lg">423 Kgs</p>
+        <p className="text-center py-1.5 text-lg">{footerLable}</p>
       </CardContent>
     </Card>
   );

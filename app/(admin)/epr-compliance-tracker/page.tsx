@@ -3,8 +3,10 @@ import ReusabilityBySegment from "@/components/reusability-by-segment";
 import ReusabilityComparision from "@/components/reusability-comparison";
 
 import {
+  GarmentDiversionData,
   mockReusabilityByProductData,
   mockReusabilityBySegmentData,
+  ReusePathwaysData,
 } from "@/lib/data";
 
 const Page = () => {
@@ -14,6 +16,7 @@ const Page = () => {
         <DiversionAssessment
           title="Garment Diversion Assessment"
           description="Reusability Vs Non-Reusability: Across all integrations or sources"
+          data={GarmentDiversionData}
         />
         <ReusabilityComparision
           title="Reusability comparison against peers"
@@ -30,7 +33,11 @@ const Page = () => {
         description="Reusability Vs Non-Reusability: Ranked by product (%)"
         data={mockReusabilityByProductData}
       />
-      <DiversionAssessment title="Reuse pathways" description="" />
+      <DiversionAssessment
+        title="Reuse pathways"
+        description=""
+        data={ReusePathwaysData}
+      />
     </>
   );
 };
