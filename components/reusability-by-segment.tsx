@@ -1,7 +1,4 @@
-import {
-  mockReusabilityBySegmentData,
-  ReusabilityBySegmentData,
-} from "@/lib/data";
+import { ReusabilityBySegmentData } from "@/lib/data";
 import ReusabilityComaparisonRow from "./reusability-comparison-bar-row";
 
 const ReusabilityBySegment = ({

@@ -23,7 +23,7 @@ const CollectionVolumeChart = ({
       </div>
       <div className="flex flex-col items-center px-6 pb-6">
         {/* Dynamic Progress Bars List */}
-        <div className="w-full mt-8 flex flex-col gap-10 px-4 h-145 overflow-y-auto">
+        <div className="w-full mt-8 flex flex-col gap-10 px-4 h-145 overflow-y-auto custom-scrollbar">
           {data.map((category) => (
             <CollectionVolumeRow
               key={category.id}

@@ -30,6 +30,7 @@ const Page = () => {
         description="Reusability Vs Non-Reusability: Ranked by product (%)"
         data={mockReusabilityByProductData}
       />
+      <DiversionAssessment title="Reuse pathways" description="" />
     </>
   );
 };
