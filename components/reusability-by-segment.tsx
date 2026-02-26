@@ -1,23 +1,28 @@
-import { mockReusabilityBySegmentData } from "@/lib/data";
+import {
+  mockReusabilityBySegmentData,
+  ReusabilityBySegmentData,
+} from "@/lib/data";
 import ReusabilityComaparisonRow from "./reusability-comparison-bar-row";
 
 const ReusabilityBySegment = ({
   title,
   description,
+  data,
 }: {
   title: string;
   description: string;
+  data: ReusabilityBySegmentData[];
 }) => {
   return (
-    <div className="bg-white p-7.5 rounded-xl flex flex-col gap-6">
+    <div className="bg-white p-7.5 rounded-xl flex flex-col gap-10">
       <div>
         <h3 className="font-gilroy-bold text-2xl">{title}</h3>
         <span className="text-[#7A5C51]/60 font-gilroy-light text-sm">
           {description}
         </span>
       </div>
-      <div className="flex flex-col gap-8 h-[520px] overflow-y-auto">
-        {mockReusabilityBySegmentData.map((data, index) => (
+      <div className="flex flex-col gap-8 h-130 overflow-y-auto custom-scrollbar pr-4">
+        {data.map((data, index) => (
           <ReusabilityComaparisonRow
             key={index}
             iconSrc={data.iconSrc}

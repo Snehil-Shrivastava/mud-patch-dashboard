@@ -490,7 +490,14 @@ export const mockUsageComparisonData: UsageComparisonData[] = [
   { month: "Dec", greenBrand: 60, peerIndex: 50 },
 ];
 
-export const mockReusabilityBySegmentData = [
+export interface ReusabilityBySegmentData {
+  id: string;
+  label: string;
+  reusablePercent: number;
+  iconSrc: string;
+}
+
+export const mockReusabilityBySegmentData: ReusabilityBySegmentData[] = [
   { id: "baby", label: "Baby", reusablePercent: 80, iconSrc: "/rose.svg" },
   { id: "teen", label: "Teen", reusablePercent: 60, iconSrc: "/teen.svg" },
   {
@@ -527,5 +534,57 @@ export const mockReusabilityBySegmentData = [
     reusablePercent: 75,
 
     iconSrc: "/pre-teen.svg",
+  },
+];
+
+export const mockReusabilityByProductData: ReusabilityBySegmentData[] = [
+  {
+    id: "bodysuit",
+    label: "Bodysuit",
+    reusablePercent: 80,
+
+    iconSrc: "/bodysuit.svg",
+  },
+  {
+    id: "tshirts",
+    label: "T-shirts",
+    reusablePercent: 60,
+
+    iconSrc: "/tshirts.svg",
+  },
+  {
+    id: "shirts",
+    label: "Shirts",
+    reusablePercent: 55,
+
+    iconSrc: "/shirts.svg",
+  },
+  {
+    id: "dresses",
+    label: "Dresses",
+    reusablePercent: 50,
+
+    iconSrc: "/dresses.svg",
+  },
+  {
+    id: "dungaress",
+    label: "Dungaress",
+    reusablePercent: 40,
+
+    iconSrc: "/dungaress.svg",
+  },
+  {
+    id: "pjs",
+    label: "PJs",
+    reusablePercent: 30,
+
+    iconSrc: "/pjs.svg",
+  },
+  {
+    id: "blankets",
+    label: "Blankets",
+    reusablePercent: 45,
+
+    iconSrc: "/blankets.svg",
   },
 ];
