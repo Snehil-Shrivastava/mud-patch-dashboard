@@ -653,3 +653,24 @@ export const ReusePathwaysData: EPRComplianceRadialChartData = {
     },
   ],
 };
+
+export const EPRSpendRadialChartData = [
+  {
+    value: 970,
+    max: 970,
+    unit: "£",
+    footerLable: "Collections",
+  },
+  {
+    value: 450,
+    max: 970,
+    unit: "£",
+    footerLable: "Textile pre-processing",
+  },
+  {
+    value: 200,
+    max: 970,
+    unit: "£",
+    footerLable: "Customer take-back incentives",
+  },
+];

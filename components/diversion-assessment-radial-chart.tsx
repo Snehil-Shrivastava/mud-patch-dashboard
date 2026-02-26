@@ -24,10 +24,9 @@ interface PostUseRadialChartProps {
   max: number;
   unit: string;
   trend?: "up" | "down";
-  footerLabel?: string;
+  footerLable?: string;
   footerStatus?: string;
   PS?: string;
-  footerLable?: string;
 }
 
 const chartConfig = {
