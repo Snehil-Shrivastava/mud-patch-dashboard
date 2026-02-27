@@ -122,11 +122,13 @@ const renderActiveShape = (props: any) => {
 export default function DisposalTriggersChart({
   title,
   description,
+  start = 2,
 }: {
   title: string;
   description: string;
+  start?: number;
 }) {
-  const [activeIndex, setActiveIndex] = useState(2); // Default active is "Stained" (index 2)
+  const [activeIndex, setActiveIndex] = useState(start); // Default active is "Stained" (index 2)
 
   return (
     <Card className="flex w-full flex-col rounded-xl p-6 border-none shadow-none">

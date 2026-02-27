@@ -73,6 +73,7 @@ const Page = () => {
           <DisposalTriggersChart
             title="Disposal ranking across peers"
             description="Top 4 cross peer brands"
+            start={1}
           />
         </div>
         <Disposal
