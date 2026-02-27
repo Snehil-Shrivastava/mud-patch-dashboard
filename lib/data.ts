@@ -17,6 +17,12 @@ export const tabs = [
     icon: "/epr-compliance-tracker.svg",
     color: "#2C4152",
   },
+  {
+    label: "Activity Maps",
+    href: "/activity-maps",
+    icon: "/activity-maps.svg",
+    color: "#584B42",
+  },
 ];
 
 export type ChartFormat = "units" | "percentage" | "number";
