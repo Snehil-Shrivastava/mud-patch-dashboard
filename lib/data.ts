@@ -680,3 +680,277 @@ export const EPRSpendRadialChartData = [
     footerLable: "Customer take-back incentives",
   },
 ];
+
+export interface DisposalLabelDataType {
+  color: string;
+  label: string;
+}
+
+export interface DisposalDataType {
+  id: string;
+  label: string;
+  iconSrc: string;
+  outgrownPercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+  repairPercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+  stainedPercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+  resalePercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+  wornPercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+  uncomfortablePercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+  stretchedPercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+  otherPercent: {
+    value: number;
+    color: string;
+    label?: string;
+  };
+}
+
+export const DisposalBySegmentLabelData: DisposalLabelDataType[] = [
+  {
+    color: "#84D0D6",
+    label: "Outgrown",
+  },
+  { color: "#2F868D", label: "Repair" },
+  { color: "#1A4A4E", label: "Stained" },
+  { color: "#F6D279", label: "Resale" },
+  { color: "#F1B51F", label: "Worn repeatedly" },
+  {
+    color: "#F89970",
+    label: "Uncomfortable",
+  },
+  {
+    color: "#C75B39",
+    label: "Lost shape/Stretched",
+  },
+  { color: "#595959", label: "Other" },
+];
+
+export const DisposalBySegmentData: DisposalDataType[] = [
+  {
+    id: "baby",
+    label: "Baby",
+    iconSrc: "/rose.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6", label: "Outgrown" },
+    repairPercent: { value: 20, color: "#2F868D", label: "Repair" },
+    stainedPercent: { value: 5, color: "#1A4A4E", label: "Stained" },
+    resalePercent: { value: 15, color: "#F6D279", label: "Resale" },
+    wornPercent: { value: 18, color: "#F1B51F", label: "Worn repeatedly" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+      label: "Uncomfortable",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+      label: "Lost shape/Stretched",
+    },
+    otherPercent: { value: 10, color: "#595959", label: "Other" },
+  },
+  {
+    id: "teen",
+    label: "Teen",
+    iconSrc: "/teen.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6", label: "Outgrown" },
+    repairPercent: { value: 20, color: "#2F868D", label: "Repair" },
+    stainedPercent: { value: 5, color: "#1A4A4E", label: "Stained" },
+    resalePercent: { value: 15, color: "#F6D279", label: "Resale" },
+    wornPercent: { value: 18, color: "#F1B51F", label: "Worn repeatedly" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+      label: "Uncomfortable",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+      label: "Lost shape/Stretched",
+    },
+    otherPercent: { value: 10, color: "#595959", label: "Other" },
+  },
+  {
+    id: "room",
+    label: "Room Essentials",
+    iconSrc: "/room-essentials.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6", label: "Outgrown" },
+    repairPercent: { value: 20, color: "#2F868D", label: "Repair" },
+    stainedPercent: { value: 5, color: "#1A4A4E", label: "Stained" },
+    resalePercent: { value: 15, color: "#F6D279", label: "Resale" },
+    wornPercent: { value: 18, color: "#F1B51F", label: "Worn repeatedly" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+      label: "Uncomfortable",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+      label: "Lost shape/Stretched",
+    },
+    otherPercent: { value: 10, color: "#595959", label: "Other" },
+  },
+];
+
+export const DisposalByProductLabelData = [
+  {
+    color: "#84D0D6",
+    label: "Outgrown",
+  },
+  { color: "#2F868D", label: "Repair" },
+  { color: "#1A4A4E", label: "Stained" },
+  { color: "#F6D279", label: "Resale" },
+  { color: "#F1B51F", label: "Worn repeatedly" },
+  {
+    color: "#F89970",
+    label: "Uncomfortable",
+  },
+  {
+    color: "#C75B39",
+    label: "Lost shape/Stretched",
+  },
+  { color: "#595959", label: "Other" },
+];
+
+export const DisposalByProductData = [
+  {
+    id: "bodysuit",
+    label: "Bodysuit",
+    iconSrc: "/bodysuit.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6" },
+    repairPercent: { value: 20, color: "#2F868D" },
+    stainedPercent: { value: 5, color: "#1A4A4E" },
+    resalePercent: { value: 15, color: "#F6D279" },
+    wornPercent: { value: 18, color: "#F1B51F" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+    },
+    otherPercent: { value: 10, color: "#595959" },
+  },
+  {
+    id: "tshirts",
+    label: "T-shirts",
+    iconSrc: "/tshirts.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6" },
+    repairPercent: { value: 20, color: "#2F868D" },
+    stainedPercent: { value: 5, color: "#1A4A4E" },
+    resalePercent: { value: 15, color: "#F6D279" },
+    wornPercent: { value: 18, color: "#F1B51F" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+    },
+    otherPercent: { value: 10, color: "#595959" },
+  },
+  {
+    id: "shirts",
+    label: "Shirts",
+    iconSrc: "/shirts.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6" },
+    repairPercent: { value: 20, color: "#2F868D" },
+    stainedPercent: { value: 5, color: "#1A4A4E" },
+    resalePercent: { value: 15, color: "#F6D279" },
+    wornPercent: { value: 18, color: "#F1B51F" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+    },
+    otherPercent: { value: 10, color: "#595959" },
+  },
+  {
+    id: "dresses",
+    label: "Dresses",
+    iconSrc: "/dresses.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6" },
+    repairPercent: { value: 20, color: "#2F868D" },
+    stainedPercent: { value: 5, color: "#1A4A4E" },
+    resalePercent: { value: 15, color: "#F6D279" },
+    wornPercent: { value: 18, color: "#F1B51F" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+    },
+    otherPercent: { value: 10, color: "#595959" },
+  },
+  {
+    id: "dungaress",
+    label: "Dungaress",
+    iconSrc: "/dungaress.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6" },
+    repairPercent: { value: 20, color: "#2F868D" },
+    stainedPercent: { value: 5, color: "#1A4A4E" },
+    resalePercent: { value: 15, color: "#F6D279" },
+    wornPercent: { value: 18, color: "#F1B51F" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+    },
+    otherPercent: { value: 10, color: "#595959" },
+  },
+  {
+    id: "pjs",
+    label: "PJs",
+    iconSrc: "/pjs.svg",
+    outgrownPercent: { value: 10, color: "#84D0D6" },
+    repairPercent: { value: 20, color: "#2F868D" },
+    stainedPercent: { value: 5, color: "#1A4A4E" },
+    resalePercent: { value: 15, color: "#F6D279" },
+    wornPercent: { value: 18, color: "#F1B51F" },
+    uncomfortablePercent: {
+      value: 20,
+      color: "#F89970",
+    },
+    stretchedPercent: {
+      value: 5,
+      color: "#C75B39",
+    },
+    otherPercent: { value: 10, color: "#595959" },
+  },
+];

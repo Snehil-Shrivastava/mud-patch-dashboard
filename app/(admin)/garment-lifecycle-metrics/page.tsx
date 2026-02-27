@@ -1,5 +1,6 @@
 import CollectionVolumeChart from "@/components/collection-volume-chart";
 import { CollectionVolumeComparisonChart } from "@/components/collection-volume-comparison-chart";
+import Disposal from "@/components/disposal";
 import GarmentLifeCycleRadialChart from "@/components/garment-life-cycle-chart";
 import { UsageOverTImeChart } from "@/components/usage-period-over-time-chart";
 import {
@@ -7,6 +8,10 @@ import {
   mockUsageMetricsData,
   mockCategoryVolumeProductData,
   mockCategoryVolumeSegmentData,
+  DisposalBySegmentData,
+  DisposalBySegmentLabelData,
+  DisposalByProductData,
+  DisposalByProductLabelData,
 } from "@/lib/data";
 
 const Page = () => {
@@ -58,6 +63,18 @@ const Page = () => {
           iconColor="bg-[#CF9645]"
         />
       </div>
+      <Disposal
+        title="Disposal by segment"
+        description="Disposal triggers (in %) by segment"
+        chartData={DisposalBySegmentData}
+        labelData={DisposalBySegmentLabelData}
+      />
+      <Disposal
+        title="Disposal by product"
+        description="Disposal triggers (in %) by segment"
+        chartData={DisposalByProductData}
+        labelData={DisposalByProductLabelData}
+      />
     </>
   );
 };
