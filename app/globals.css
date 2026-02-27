@@ -164,3 +164,8 @@ main {
   background-color: rgba(206, 206, 206, 1);
   height: 45px;
 }
+
+.recharts-active-shape,
+.recharts-pie-sector {
+  outline: none !important;
+}

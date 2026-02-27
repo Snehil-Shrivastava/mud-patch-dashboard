@@ -1,6 +1,7 @@
 import CollectionVolumeChart from "@/components/collection-volume-chart";
 import { CollectionVolumeComparisonChart } from "@/components/collection-volume-comparison-chart";
 import Disposal from "@/components/disposal";
+import DisposalTriggersChart from "@/components/donut-chart";
 import GarmentLifeCycleRadialChart from "@/components/garment-life-cycle-chart";
 import { UsageOverTImeChart } from "@/components/usage-period-over-time-chart";
 import {
@@ -63,12 +64,24 @@ const Page = () => {
           iconColor="bg-[#CF9645]"
         />
       </div>
-      <Disposal
-        title="Disposal by segment"
-        description="Disposal triggers (in %) by segment"
-        chartData={DisposalBySegmentData}
-        labelData={DisposalBySegmentLabelData}
-      />
+      <div className="flex flex-col gap-10">
+        <div className="flex gap-5">
+          <DisposalTriggersChart
+            title="Leading disposal triggers"
+            description="Top 4 within brand product portfolio"
+          />
+          <DisposalTriggersChart
+            title="Disposal ranking across peers"
+            description="Top 4 cross peer brands"
+          />
+        </div>
+        <Disposal
+          title="Disposal by segment"
+          description="Disposal triggers (in %) by segment"
+          chartData={DisposalBySegmentData}
+          labelData={DisposalBySegmentLabelData}
+        />
+      </div>
       <Disposal
         title="Disposal by product"
         description="Disposal triggers (in %) by segment"
