@@ -3,7 +3,7 @@ import { CollectionVolumeComparisonChart } from "@/components/collection-volume-
 import Disposal from "@/components/disposal";
 import DisposalTriggersChart from "@/components/donut-chart";
 import GarmentLifeCycleRadialChart from "@/components/garment-life-cycle-chart";
-import { UsageOverTImeChart } from "@/components/usage-period-over-time-chart";
+import { UsageOverTimeChart } from "@/components/usage-period-over-time-chart";
 import {
   mockUsageComparisonData,
   mockUsageMetricsData,
@@ -48,7 +48,7 @@ const Page = () => {
         </div>
       </div>
       <div className="flex justify-between items-start w-full">
-        <UsageOverTImeChart />
+        <UsageOverTimeChart />
       </div>
       <div className="flex justify-between items-start w-full">
         <CollectionVolumeChart

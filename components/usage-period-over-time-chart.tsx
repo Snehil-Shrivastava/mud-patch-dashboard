@@ -1,13 +1,11 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis, Dot } from "recharts";
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -38,7 +36,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function UsageOverTImeChart() {
+export function UsageOverTimeChart() {
   return (
     <Card className="w-full shadow-none border-none text-[#7A5C51]">
       <CardHeader className="border-b py-0 px-8">
@@ -68,13 +66,13 @@ export function UsageOverTImeChart() {
               tickFormatter={(value) => value.slice(0, 4)}
             /> */}
             <XAxis
-  dataKey="year"
-  tickLine={false}
-  axisLine={false}
-  tickMargin={8}
-  padding={{ left: 20, right: 20 }} // ✅ adds gap from the axis edges
-  tickFormatter={(value) => value.slice(0, 4)}
-/>
+              dataKey="year"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              padding={{ left: 50, right: 20 }} // ✅ adds gap from the axis edges
+              tickFormatter={(value) => value.slice(0, 4)}
+            />
             <YAxis
               tickLine={false}
               axisLine={false}
@@ -93,24 +91,25 @@ export function UsageOverTImeChart() {
               stroke="#CE9643"
             /> */}
             <Area
-  dataKey="usage"                   // ✅ fix: was "desktop"
-  type="linear"
-  fill="var(--color-usage)"
-  fillOpacity={0.4}
-  stroke="#CE9643"
-  dot={{                            // ✅ always-visible dots
-    r: 4,
-    fill: "#CE9643",
-    stroke: "#ffffff",
-    strokeWidth: 2,
-  }}
-  activeDot={{                      // slightly larger on hover
-    r: 6,
-    fill: "#CE9643",
-    stroke: "#ffffff",
-    strokeWidth: 2,
-  }}
-/>
+              dataKey="usage"                   
+              type="linear"
+              fill="var(--color-usage)"
+              fillOpacity={0.4}
+              stroke="#CE9643"
+              // dot={{                           
+              //   r: 4,
+              //   fill: "#CE9643",
+              //   stroke: "#ffffff",
+              //   strokeWidth: 2,
+              // }}
+              dot={(props) => <Dot {...props} r={4} fill="#CE9643" />}
+              activeDot={{                      
+                r: 6,
+                fill: "#CE9643",
+                stroke: "#ffffff",
+                strokeWidth: 2,
+              }}
+            />
           </AreaChart>
         </ChartContainer>
       </CardContent>
