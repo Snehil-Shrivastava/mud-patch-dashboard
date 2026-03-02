@@ -97,7 +97,7 @@ const renderActiveShape = (props: any) => {
         className="transition-all duration-500 outline-none"
       >
         {/* Outer glowing layers (simulating a soft drop shadow) */}
-        <rect
+        {/* <rect
           x={-14}
           y={-24}
           width={28}
@@ -114,11 +114,11 @@ const renderActiveShape = (props: any) => {
           rx={12}
           fill={fill}
           opacity={0.3}
-        />
+        /> */}
 
         {/* Solid center pill */}
         {/* <rect x={-9} y={-19} width={18} height={38} rx={9} fill={fill} /> */}
-        <circle cx={0} cy={0} r={22} fill={fill} />
+        <circle cx={0} cy={0} r={20} fill={fill} />
         {/* White center dot hole */}
         <circle cx={0} cy={0} r={10} fill="#ffffff" />
       </g>
