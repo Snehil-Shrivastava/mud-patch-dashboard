@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { PieChart, Pie, Cell, Sector, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Sector,
+  ResponsiveContainer,
+  Customized,
+} from "recharts";
 
 import { Card } from "@/components/ui/card";
 
@@ -143,7 +150,7 @@ export default function DisposalTriggersChart({
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             {/* The background dotted tracking line */}
-            <DottedTrack />
+            <Customized component={DottedTrack} />
 
             <Pie
               data={data}

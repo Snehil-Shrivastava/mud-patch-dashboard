@@ -34,7 +34,7 @@ import { signOut } from "@/auth";
 export function AppSidebar() {
   return (
     <Sidebar variant="inset" className="select-none">
-      <SidebarInset className="py-8.25">
+      <SidebarInset className="py-8.25 overflow-y-auto">
         <SidebarHeader className="py-10">
           <SidebarMenu>
             <SidebarMenuItem className="flex justify-center">
@@ -42,7 +42,7 @@ export function AppSidebar() {
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarHeader>
-        <SidebarContent className="px-10 mt-10 overflow-x-hidden">
+        <SidebarContent className="px-10 mt-10 overflow-x-hidden custom-scrollbar">
           <SidebarGroup className="p-0">
             <SidebarGroupContent>
               <SidebarTabs />

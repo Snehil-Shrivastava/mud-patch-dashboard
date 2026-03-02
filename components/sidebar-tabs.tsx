@@ -45,6 +45,8 @@ const SidebarTabs = () => {
           margin-right: -2.5rem; /* match your sidebar px-10 padding */
           padding-right: 2.5rem;
           border-radius: 24px 0 0 24px;
+          padding-top: 30px;
+          padding-bottom: 30px;
         }
       `}</style>
 
