@@ -28,7 +28,7 @@ const DottedTrack = ({ width, height }: any) => {
   // Align exactly with the PieChart's cx="50%" and cy="80%"
   const cx = width / 2;
   const cy = height * 0.8;
-  const r = 90; // Slightly smaller than the Pie's innerRadius (110)
+  const r = 140; // Slightly smaller than the Pie's innerRadius (110)
 
   return (
     <path
