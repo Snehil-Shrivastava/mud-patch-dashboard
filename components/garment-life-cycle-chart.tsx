@@ -75,7 +75,7 @@ const GarmentLifeCycleRadialChart = ({
         </CardHeader>
         <CardContent className="pb-0 px-0 flex-[1.3] relative">
           {trend && (
-            <div className="absolute w-6 h-6 flex items-center justify-center pointer-events-none z-99 top-1/2 -translate-y-[110%] left-1/2 -translate-x-[160%]">
+            <div className="absolute w-6 h-6 flex items-center justify-center pointer-events-none z-40 top-1/2 -translate-y-[110%] left-1/2 -translate-x-[160%]">
               <div
                 className={`${trend === "up" ? "text-green-600 font-gilroy-bold" : "text-red-600 font-gilroy-bold"}`}
               >
