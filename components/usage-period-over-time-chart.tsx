@@ -1,6 +1,6 @@
 "use client";
 
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis, Dot } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
   Card,
@@ -58,19 +58,19 @@ export function UsageOverTimeChart() {
             }}
           >
             <CartesianGrid vertical={false} />
-            {/* <XAxis
-              dataKey="year"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 4)}
-            /> */}
+            <defs>
+              <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#CE9643" stopOpacity={1} />
+                <stop offset="64%" stopColor="#D19D4F" stopOpacity={1} />
+                <stop offset="100%" stopColor="#CE9643" stopOpacity={0.1} />
+              </linearGradient>
+            </defs>
             <XAxis
               dataKey="year"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              padding={{ left: 50, right: 20 }} // ✅ adds gap from the axis edges
+              padding={{ left: 50, right: 20 }}
               tickFormatter={(value) => value.slice(0, 4)}
             />
             <YAxis
@@ -83,27 +83,18 @@ export function UsageOverTimeChart() {
               cursor={false}
               content={<ChartTooltipContent indicator="dot" hideLabel />}
             />
-            {/* <Area
-              dataKey="desktop"
-              type="linear"
-              fill="var(--color-desktop)"
-              fillOpacity={0.4}
-              stroke="#CE9643"
-            /> */}
             <Area
-              dataKey="usage"                   
+              dataKey="usage"
               type="linear"
-              fill="var(--color-usage)"
+              fill="url(#areaGradient)"
               fillOpacity={0.4}
               stroke="#CE9643"
-              // dot={{                           
-              //   r: 4,
-              //   fill: "#CE9643",
-              //   stroke: "#ffffff",
-              //   strokeWidth: 2,
-              // }}
-              dot={(props) => <Dot {...props} r={4} fill="#CE9643" />}
-              activeDot={{                      
+              dot={{
+                fill: "#ffffff",
+                r: 5,
+                fillOpacity: 1,
+              }}
+              activeDot={{
                 r: 6,
                 fill: "#CE9643",
                 stroke: "#ffffff",
