@@ -19,7 +19,7 @@ import {
 export const description = "A linear area chart";
 
 const chartData = [
-  { year: "2024", usage: 0 },
+  // { year: "2024", usage: 0 },
   { year: "2025", usage: 2 },
   { year: "2026", usage: 15 },
   { year: "2027", usage: 9 },
@@ -52,6 +52,7 @@ export function UsageOverTimeChart() {
           <AreaChart
             accessibilityLayer
             data={chartData}
+            height={200}
             margin={{
               left: 0,
               right: 12,
@@ -77,7 +78,8 @@ export function UsageOverTimeChart() {
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              tickCount={5}
+              domain={[0, 60]}
+              ticks={[0, 10, 20, 30, 40, 50, 60]}
             />
             <ChartTooltip
               cursor={false}
