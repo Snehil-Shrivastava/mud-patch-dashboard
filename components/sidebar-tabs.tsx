@@ -79,9 +79,11 @@ const SidebarTabs = () => {
                     }}
                   />
                   <span
-                    className={
-                      isActive ? "font-gilroy-bold" : "font-gilroy-regular"
-                    }
+                    className={`${
+                      isActive
+                        ? "font-gilroy-bold text-xl"
+                        : "font-gilroy-regular"
+                    } transition-all duration-200`}
                   >
                     {tab.label}
                   </span>
