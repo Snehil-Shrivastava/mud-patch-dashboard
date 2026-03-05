@@ -48,14 +48,6 @@ const Disposal = ({
             <span>{data.label}</span>
           </div>
         ))}
-        {/* <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded-[100px] bg-[#748695]" />
-            <span>Reusable</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded-[100px] bg-[#394C5C]" />
-            <span>Non-Reusable</span>
-          </div> */}
       </div>
     </div>
   );
